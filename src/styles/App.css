@@ -1,3 +1,13 @@
-.card {
+.landing,
+.test-screen {
   padding: 2em;
+}
+
+.task-option {
+  margin-bottom: 1em;
+}
+
+textarea {
+  width: 100%;
+  font-family: inherit;
 }

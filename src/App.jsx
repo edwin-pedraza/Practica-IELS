@@ -1,19 +1,17 @@
 import { useState } from 'react';
+import LandingScreen from './components/LandingScreen.jsx';
+import TestScreen from './components/TestScreen.jsx';
+import { tasks } from './data/tasks.js';
 import './styles/App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [currentTask, setCurrentTask] = useState(null);
 
-  return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
-  );
+  if (!currentTask) {
+    return <LandingScreen tasks={tasks} onStart={setCurrentTask} />;
+  }
+
+  return <TestScreen task={currentTask} />;
 }
 
 export default App;
