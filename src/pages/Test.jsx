@@ -15,6 +15,7 @@ export default function Test() {
     durationMins,
     isRunning,
     stop,
+    reset,
   } = useTestStore();
 
   const navigate = useNavigate();
@@ -54,6 +55,14 @@ export default function Test() {
       </div>
       <button
         onClick={() => {
+          reset();
+          setRemaining(durationMins * 60);
+        }}
+      >
+        Reset
+      </button>
+      <button
+        onClick={() => {
           stop();
           navigate('/');
         }}
@@ -63,4 +72,3 @@ export default function Test() {
     </div>
   );
 }
-
