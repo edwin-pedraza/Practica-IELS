@@ -42,5 +42,7 @@ export const useTestStore = create((set) => ({
     }),
   setResponse: (response) => set({ response }),
   stop: () => set({ isRunning: false }),
+
   reset: () => set({ startedAt: Date.now(), isRunning: true }),
+
 }));
