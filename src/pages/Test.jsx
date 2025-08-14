@@ -8,7 +8,7 @@ import Timer from '../components/Timer.jsx';
  * @returns {JSX.Element}
  */
 export default function Test() {
-  const { promptText, response, setResponse, stop } = useTestStore();
+  const { promptText, response, setResponse, stop, reset } = useTestStore();
 
   const navigate = useNavigate();
 
@@ -31,6 +31,7 @@ export default function Test() {
           Time left: <Timer />
         </span>
         <span> Words: {words}</span>
+        <button onClick={reset}>Reset</button>
       </div>
       <button
         onClick={() => {
