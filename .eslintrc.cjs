@@ -4,6 +4,10 @@ module.exports = {
     browser: true,
     es2020: true,
   },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
   plugins: ['react-refresh'],
   settings: {
@@ -14,5 +18,6 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-no-target-blank': 'off',
+    'react/prop-types': 'off',
   },
 };
