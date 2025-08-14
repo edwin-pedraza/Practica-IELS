@@ -1,28 +1,21 @@
+
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTestStore } from '../store/useTestStore.js';
+import Timer from '../components/Timer.jsx';
 
 /**
  * Test page displaying the prompt, editor and timer.
  * @returns {JSX.Element}
  */
 export default function Test() {
-  const {
-    promptText,
-    response,
-    setResponse,
-    startedAt,
-    durationMins,
-    isRunning,
-    stop,
-  } = useTestStore();
+
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!promptText) navigate('/');
   }, [promptText, navigate]);
-
   const [remaining, setRemaining] = useState(durationMins * 60);
 
   useEffect(() => {
@@ -47,10 +40,12 @@ export default function Test() {
       />
       <div>
         <span>
+
           Time left: {Math.floor(remaining / 60)}:
           {(remaining % 60).toString().padStart(2, '0')}
         </span>
         <span> Words: {words}</span>
+
       </div>
       <button
         onClick={() => {

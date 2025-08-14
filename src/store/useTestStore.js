@@ -18,6 +18,8 @@ import { create } from 'zustand';
  * @property {(taskKey:string, prompt:Prompt, durationMins:number) => void} start
  * @property {(response:string) => void} setResponse
  * @property {() => void} stop
+ * @property {() => void} reset
+
  */
 
 /** @type {import('zustand').UseBoundStore<import('zustand').StoreApi<TestState>>} */
@@ -41,5 +43,6 @@ export const useTestStore = create((set) => ({
     }),
   setResponse: (response) => set({ response }),
   stop: () => set({ isRunning: false }),
+
 }));
 
