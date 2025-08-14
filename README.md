@@ -10,6 +10,16 @@ This project was bootstrapped manually to mimic the Vite React template.
 - `npm run lint` - Run ESLint
 - `npm run format` - Format with Prettier
 
+- `npm test` - Run tests (once tests are added)
+
+## Running Tests
+
+Once test files are added, run them with:
+
+```
+npm test
+```
+
 ## Project Structure
 
 ```
