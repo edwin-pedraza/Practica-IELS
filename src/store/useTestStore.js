@@ -16,7 +16,7 @@ import { create } from 'zustand';
  * @property {number} durationMins
  * @property {boolean} isRunning
  * @property {(taskKey:string, prompt:Prompt, durationMins:number) => void} start
-  * @property {(response:string) => void} setResponse
+ * @property {(response:string) => void} setResponse
  * @property {() => void} stop
  * @property {() => void} reset
  */
