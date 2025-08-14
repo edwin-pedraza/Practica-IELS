@@ -1,17 +1,19 @@
-import { useState } from 'react';
-import LandingScreen from './components/LandingScreen.jsx';
-import TestScreen from './components/TestScreen.jsx';
-import { tasks } from './data/tasks.js';
-import './styles/App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Landing from './pages/Landing.jsx';
+import Test from './pages/Test.jsx';
 
-function App() {
-  const [currentTask, setCurrentTask] = useState(null);
-
-  if (!currentTask) {
-    return <LandingScreen tasks={tasks} onStart={setCurrentTask} />;
-  }
-
-  return <TestScreen task={currentTask} />;
+/**
+ * Root application component with route definitions.
+ * @returns {JSX.Element}
+ */
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/test" element={<Test />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App;
