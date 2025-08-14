@@ -15,7 +15,6 @@ export default function Test() {
   useEffect(() => {
     if (!promptText) navigate('/');
   }, [promptText, navigate]);
-
   const words = response.trim() ? response.trim().split(/\s+/).length : 0;
 
   return (
